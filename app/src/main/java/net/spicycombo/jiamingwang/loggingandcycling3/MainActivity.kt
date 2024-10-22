@@ -21,10 +21,15 @@ class MainActivity : AppCompatActivity() {
     private var newState : Boolean = true
     private var displayTime : Long = 0
 
+    private lateinit var listTest : Array<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        listTest = arrayOf<String>("1, 2," +
+                "")
 
         hookViews()
 
@@ -48,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             timer.stop()
             timer.base = SystemClock.elapsedRealtime()
             startStop.setImageResource(android.R.drawable.ic_media_play)
-            newState = true;
+            newState = true
         }
     }
 
@@ -83,5 +88,30 @@ class MainActivity : AppCompatActivity() {
         reset = findViewById(R.id.button_main_reset)
         startStop = findViewById(R.id.floatingActionButton)
         timer = findViewById(R.id.chronometer_main_timer)
+    }
+
+    // other methods in the android activity lifecycle that we won't do much with
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }
