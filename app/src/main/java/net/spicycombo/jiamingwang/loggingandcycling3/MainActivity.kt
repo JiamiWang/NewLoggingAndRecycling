@@ -2,6 +2,7 @@ package net.spicycombo.jiamingwang.loggingandcycling3
 
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
@@ -25,8 +26,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i(getString(R.string.app_name),"onCreate")
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
 
         listTest = arrayOf<String>("1, 2," +
                 "")
@@ -93,22 +96,27 @@ class MainActivity : AppCompatActivity() {
     // other methods in the android activity lifecycle that we won't do much with
     override fun onStart() {
         super.onStart()
+        Log.i(getString(R.string.app_name),"onStart")
     }
 
     override fun onResume() {
         super.onResume()
+        Log.i(getString(R.string.app_name),"onResume")
     }
 
     override fun onPause() {
         super.onPause()
+        Log.i(getString(R.string.app_name),"onPause")
     }
 
     override fun onRestart() {
         super.onRestart()
+        Log.i(getString(R.string.app_name),"onRestart")
     }
 
     override fun onStop() {
         super.onStop()
+        Log.i(getString(R.string.app_name),"onStop")
     }
 
     override fun onDestroy() {
